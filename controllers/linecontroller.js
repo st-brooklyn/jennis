@@ -3,7 +3,7 @@
 const configs = require('../configs');
 
 const line = require('@line/bot-sdk');
-const lineClient = line.Client(configs.lineconfig);
+const lineClient = new line.Client(configs.lineconfig);
 
 function webhookImp(req, res) {
     Promise
