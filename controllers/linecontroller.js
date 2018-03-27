@@ -3,7 +3,7 @@
 const configs = require('../configs');
 
 const line = require('@line/bot-sdk');
-const lineClient = line.Client(config);
+const lineClient = line.Client(configs.lineconfig);
 
 function webhookImp(req, res) {
     Promise
@@ -27,7 +27,7 @@ function handleEvent (event) {
       // use reply API
     //return lineClient.replyMessage(event.replyToken, echo);
     return lineClient.pushMessage(event.source.userId, echo);
-    
+
 }
 
 module.exports = {
