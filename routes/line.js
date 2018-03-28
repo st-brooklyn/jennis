@@ -3,21 +3,25 @@
 var express = require('express');
 var router = express.Router();
 
-const line = require('@line/bot-sdk');
 const configs = require('../configs');
+
+const line = require('@line/bot-sdk');
+const middleware = require('@line/bot-sdk').middleware;
 const linecontroller = require('../controllers/linecontroller');
 
+
 /* GET home page. */
-router.post('/webhook', line.middleware(configs.lineconfig), (req, res) => {
+router.post('/webhook', middleware(configs.lineconfig), (req, res) => {
     console.log(JSON.stringify(req));
-    Promise
-    .all(req.body.events.map(handleEvent))
-    .then((result) => res.json(result))
-    .catch((err) => {
-      console.error(err);
-      console.log(err.stack);
-      res.status(500).end();
-    });
+    res.json(req.body.events)
+    // Promise
+    // .all(req.body.events.map(handleEvent))
+    // .then((result) => res.json(result))
+    // .catch((err) => {
+    //   console.error(err);
+    //   console.log(err.stack);
+    //   res.status(500).end();
+    // });
 });
 
 function handleEvent (event) {
