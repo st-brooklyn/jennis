@@ -35,5 +35,5 @@ function handleEvent (event) {
 }
 
 module.exports = {
-    webhook: webhookImp;
+    webhook: webhookImp
 }
