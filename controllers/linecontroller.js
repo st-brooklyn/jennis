@@ -12,6 +12,7 @@ function webhookImp(req, res) {
     .then((result) => res.json(result))
     .catch((err) => {
       console.error(err);
+      console.log(err.stack);
       res.status(500).end();
     });
 }
@@ -20,6 +21,9 @@ function handleEvent (event) {
     if (event.type !== 'message' || event.message.type !== 'text') {
         // ignore non-text-message event
         return Promise.resolve(null);
+      }
+      else {
+
       }
     
       // create a echoing text message
