@@ -32,7 +32,6 @@ function handleEvent (event) {
       // use reply API
     //return lineClient.replyMessage(event.replyToken, echo);
     return lineClient.pushMessage(event.source.userId, echo);
-
 }
 
 exports.webhook = webhookImp;
