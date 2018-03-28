@@ -9,13 +9,18 @@ const line = require('@line/bot-sdk');
 const linecontroller = require('../controllers/linecontroller');
 
 /* GET home page. */
-router.post('/webhook', line.middleware(configs.lineconfig), (req, res) => {
-    console.log(JSON.stringify(req));
-    linecontroller.webhook(req, res);
+router.post('/webhook', line.middleware(configs.jennisbot), (req, res) => {
+    try {
+        console.log(JSON.stringify(req));
+        linecontroller.webhook(req, res);
+    }
+    catch(ex) {
+        console.log(ex.stack);
+    }
 });
 
 router.get('/webhook', (req, res) => {
-    console.log("hello");
+    console.log("hello");    
     res.status(200).end();
 }) 
 

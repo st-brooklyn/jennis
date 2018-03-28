@@ -3,7 +3,7 @@
 const configs = require('../configs');
 
 const line = require('@line/bot-sdk');
-const lineClient = new line.Client(configs.lineconfig);
+const lineClient = new line.Client(configs.jennisbot);
 
 function webhookImp(req, res) {
     console.log(JSON.stringify(req));
@@ -33,5 +33,8 @@ function handleEvent (event) {
     //return lineClient.replyMessage(event.replyToken, echo);
     return lineClient.pushMessage(event.source.userId, echo);
 }
-
-exports.webhook = webhookImp;
+module.exports = {
+    webhook: (req, res) => {
+        return webhookImp(req, res);
+    }
+}
