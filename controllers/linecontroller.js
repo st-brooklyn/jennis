@@ -11,7 +11,7 @@ function webhookImp(req, res) {
     .all(req.body.events.map(handleEvent))
     .then((result) => res.json(result))
     .catch((err) => {
-      console.error(err);
+      //console.error(err);
       console.log(err.stack);
       res.status(500).end();
     });
@@ -33,6 +33,7 @@ function handleEvent (event) {
     //return lineClient.replyMessage(event.replyToken, echo);
     return lineClient.pushMessage(event.source.userId, echo);
 }
+
 module.exports = {
     webhook: (req, res) => {
         webhookImp(req, res);
