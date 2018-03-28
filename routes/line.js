@@ -12,7 +12,7 @@ const linecontroller = require('../controllers/linecontroller');
 router.post('/webhook', line.middleware(configs.jennisbot), (req, res) => {
     try {
         console.log(JSON.stringify(req));
-        linecontroller.webhook(req, res);
+        //linecontroller.webhook(req, res);
     }
     catch(ex) {
         console.log(ex.stack);
@@ -22,6 +22,6 @@ router.post('/webhook', line.middleware(configs.jennisbot), (req, res) => {
 router.get('/webhook', (req, res) => {
     console.log("hello");    
     res.status(200).end();
-}) 
+});
 
 module.exports = router;
