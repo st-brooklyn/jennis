@@ -11,20 +11,10 @@ const linecontroller = require('../controllers/linecontroller');
 /* GET home page. */
 
 // route middleware that will happen on every request
-router.post('/hookjennis', line.middleware(configs.jennisbot), (req, res) => {
-    try {
-        console.log(JSON.stringify(req));
-        res.status(200).end();
-        //linecontroller.webhook(req, res);
-    }
-    catch(ex) {
-        console.log(ex.stack);
-    }
-});
+router.post('/hookjennis', line.middleware(configs.jennisbot), linecontroller.webhook);
 
 router.get('/hookjennis', (req, res) => {
-    console.log("hello");
-    console.log(JSON.stringify(configs.jennisbot));
+    console.log("hello");    
     res.status(200).end();
 });
 

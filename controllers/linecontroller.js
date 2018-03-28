@@ -6,7 +6,7 @@ const line = require('@line/bot-sdk');
 const lineClient = new line.Client(configs.jennisbot);
 
 function webhookImp(req, res) {
-    console.log(JSON.stringify(req));
+    console.log(req);
     Promise
     .all(req.body.events.map(handleEvent))
     .then((result) => res.json(result))
@@ -35,7 +35,5 @@ function handleEvent (event) {
 }
 
 module.exports = {
-    webhook: (req, res) => {
-        webhookImp(req, res);
-    }
+    webhook: webhookImp;
 }
