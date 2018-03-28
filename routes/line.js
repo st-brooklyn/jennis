@@ -23,7 +23,8 @@ router.post('/hookjennis', line.middleware(configs.jennisbot), (req, res) => {
 });
 
 router.get('/hookjennis', (req, res) => {
-    console.log("hello");    
+    console.log("hello");
+    console.log(JSON.stringify(configs.jennisbot));
     res.status(200).end();
 });
 
