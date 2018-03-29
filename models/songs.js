@@ -4,8 +4,8 @@ const mongoose = require('mongoose');
 let Schema = mongoose.Schema;
 
 let SongSchema = new Schema({
-    name: string,
-    lyrics: string
+    name: String,
+    lyrics: String
 });
 
 module.exports = db.model('Song', SongSchema);
