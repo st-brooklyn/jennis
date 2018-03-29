@@ -19,7 +19,8 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-global.db = mongoose.createConnection(configs.mongourl);
+//global.db = mongoose.createConnection(configs.mongourl);
+mongoose.connect(configs.mongourl, {useMongoClient: true});
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
