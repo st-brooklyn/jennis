@@ -8,4 +8,4 @@ let SongSchema = new Schema({
     lyrics: String
 });
 
-module.exports = db.model('Song', SongSchema);
+module.exports = global.db.model('Song', SongSchema);
