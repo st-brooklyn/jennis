@@ -6,6 +6,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const configs = require('./configs');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -20,6 +22,8 @@ app.set('view engine', 'jade');
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/line', lineRouter);
+
+global.db = mongoose.createConnection(configs.mongourl);
 
 // app.use(logger('dev'));
 // app.use(express.json());
