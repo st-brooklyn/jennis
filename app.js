@@ -19,11 +19,13 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+global.db = mongoose.createConnection(configs.mongourl);
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/line', lineRouter);
 
-global.db = mongoose.createConnection(configs.mongourl);
+
 
 // app.use(logger('dev'));
 // app.use(express.json());
