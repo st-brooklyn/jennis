@@ -8,4 +8,4 @@ let SongSchema = new Schema({
     lyrics: String
 });
 
-module.exports = global.db.model('Song', SongSchema);
+module.exports = mongoose.model('Song', SongSchema);
