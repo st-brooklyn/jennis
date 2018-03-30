@@ -1,7 +1,7 @@
 module.exports = {
     jennisbot: {
-        channelSecret: 'ac476ed9c0c618e136a6e22ddbb48130',
-        channelAccessToken: '6uajQuNZrg4v3jyXtdvNYJ0mpMhA6/XyXcALJCYNonfngYnu39w8EgzdNiaaYNjLxMR26pryIXXSi52xw6KVsmBqX6eYqSesN6hnL6Ow69xSAbJOnEyio8F0/QFRkpwVjVEhvmObPAqc4nlIhKVftwdB04t89/1O/w1cDnyilFU='
+        channelAccessToken: 'lup6apNf8DBa64WyaLc895Vkl78ibfKKmlm7AoTu067DipOPp7qLdf097RcmGyakFxih2tPWFVYCX1M/6076PaVK0cZJhMBA2+G+ZFuq/ZeJhEPUmcnD+be/I7L5MjvHBBUjmWZq7JKykCJzLo04SQdB04t89/1O/w1cDnyilFU=',
+        channelSecret: '2e61699822a81935e2c909e064283805'
      },
      mongourl: 'mongodb://bottie:edok@ds227199.mlab.com:27199/jennisbot'
 };

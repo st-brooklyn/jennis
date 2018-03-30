@@ -27,20 +27,20 @@ function handleEvent (event) {
     // create a echoing text message
     const echo = { type: 'text', text: event.message.text };
     
-    SongModel.create({
-        name: event.message.text,
-        lyrics: event.source.userId
-    })
-    .then((result) => {
-        echo.text = result._id;
-        lineClient.pushMessage(event.source.userId, echo);
-    })
-    .catch((ex) => {
-        console.log('Error: ' + ex.stack);
-    });
+    // SongModel.create({
+    //     name: event.message.text,
+    //     lyrics: event.source.userId
+    // })
+    // .then((result) => {
+    //     echo.text = result._id;
+    //     lineClient.pushMessage(event.source.userId, echo);
+    // })
+    // .catch((ex) => {
+    //     console.log('Error: ' + ex.stack);
+    // });
     
       // use reply API
-    //return lineClient.replyMessage(event.replyToken, echo);
+    return lineClient.replyMessage(event.replyToken, echo);
     //return lineClient.pushMessage(event.source.userId, echo);
 }
 
